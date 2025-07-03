@@ -1,15 +1,17 @@
 
 import './App.css'
 import { Navbar } from './components/Navbar/Navbar'
-import Seccion from './components/secciones/seccion'
-import Seccion1 from './components/secciones/Seccion1'
+import AboutMe from './components/secciones/AboutMe'
+import Home from './components/secciones/Home'
+import Skills from './components/secciones/Skills'
 
 function App() {
   return (
     <body class="pt-20">
       <Navbar />
-      <Seccion1 />
-      <Seccion />
+      <Home />
+      <AboutMe />
+      <Skills/>
     </body>
   )
 
