@@ -82,7 +82,7 @@ export class AboutMe extends Component {
                             }}
                             >
                                 Hello!<br/>
-                                I´m <br/> 
+                                I´m <br/>
                                 Arturo Gabriel Zamora
                             </Typography>
                             <Typography variant="body1" sx={{ textAlign: 'justify' }}>
