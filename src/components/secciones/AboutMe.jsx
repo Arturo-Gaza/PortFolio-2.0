@@ -1,9 +1,8 @@
-import React from 'react';
 import {
-    Grid,
-    Typography,
     Box,
-    Container
+    Container,
+    Grid,
+    Typography
 } from "@mui/material";
 import Perfil from '../../assets/perfil.webp';
 
@@ -77,11 +76,10 @@ const AboutMe = () => {
                                     color: "#ccc"
                                 }}
                             >
-                                Desarrollador web junior apasionado por la creación de aplicaciones.
-                                Desde 2023 he participado en diversos proyectos del sector tecnológico,
-                                desempeñándome tanto en el desarrollo back-end como en el front-end.
-                                Con conocimientos en el framework Laravel en el lado del back-end y React
-                                en el lado del front-end.
+                                Ingeniero en Sistemas con enfoque en desarrollo de software, APIs y arquitectura de aplicaciones web.
+                                Experiencia trabajando con Laravel, React y bases de datos relacionales en la construcción de sistemas 
+                                administrativos y plataformas web.
+                                Interesado en la integración entre desarrollo de software, infraestructura y monitoreo de sistemas.
                             </Typography>
                         </Box>
                     </Grid>
