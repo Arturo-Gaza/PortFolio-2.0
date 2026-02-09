@@ -6,6 +6,7 @@ import {
     Button,
 } from "@mui/material";
 import Fondo from '../../assets/fondo.jpg';
+import Fondo2 from '../../assets/fondo2.png'
 
 const Home = () => {
     return (
@@ -46,7 +47,7 @@ const Home = () => {
             >
                 <Box
                     component="img"
-                    src={Fondo}
+                    src={Fondo2}
                     alt="Fondo"
                     sx={{
                         width: "100%",

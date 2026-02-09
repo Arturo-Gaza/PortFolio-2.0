@@ -1,23 +1,23 @@
-import { Component } from "react";
 import {
+    Box,
+    Card,
+    CardContent,
+    CardMedia,
     Container,
     Grid,
-    Card,
-    CardMedia,
-    CardContent,
     Typography,
-    Box,
 } from "@mui/material";
+import { Component } from "react";
 
 // Importación de imágenes (activos) para los logos de las tecnologías
-import LaravelLogo from '../../assets/Laravel.png'
-import ReactLogo from '../../assets/React.png'
-import PostLogo from '../../assets/Post.png'
-import PostmanLogo from '../../assets/postman.png'
-import GitHubLogo from '../../assets/github-mark-white.png'
-import JavaLogo from '../../assets/java.png'
-import DjangoLogo from '../../assets/django.png'
-import ReactNativeLogo from '../../assets/react-native-1.svg'
+import DjangoLogo from '../../assets/django.png';
+import GitHubLogo from '../../assets/github-mark-white.png';
+import JavaLogo from '../../assets/java.png';
+import LaravelLogo from '../../assets/Laravel.png';
+import PostLogo from '../../assets/Post.png';
+import PostmanLogo from '../../assets/postman.png';
+import ReactNativeLogo from '../../assets/react-native-1.svg';
+import ReactLogo from '../../assets/React.png';
 
 /**
  * Arreglo de objetos que centraliza la información de las habilidades.
@@ -81,13 +81,13 @@ export class Skills extends Component {
                         </Typography>
 
                         {/* Grid Container: El sistema de rejilla de MUI para organizar las tarjetas.
-                          spacing={4} crea separación entre los elementos.
+                        spacing={4} crea separación entre los elementos.
                         */}
                         <Grid container spacing={4} justifyContent="center"
                             sx={{ mt: { xs: -5, sm: 2, md: 0 } }}>
 
-                            {/* .map() recorre el arreglo de herramientas y genera una 
-                              tarjeta por cada una.
+                            {/* .map() recorre el arreglo de herramientas y genera una
+                            tarjeta por cada una.
                             */}
                             {herramientas.map((skill, index) => (
                                 // Grid item define cuántas tarjetas caben por fila según el tamaño de pantalla
