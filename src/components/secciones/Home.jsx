@@ -1,126 +1,141 @@
-import React, { Component } from 'react'
+import React from 'react';
 import {
-    Container,
     Grid,
-    Card,
-    CardMedia,
-    CardContent,
     Typography,
     Box,
     Button,
 } from "@mui/material";
-import Fondo from '../../assets/fondo.jpg'
-import Logo from '../../assets/arturo_logo.jpg'
+import Fondo from '../../assets/fondo.jpg';
 
-export class Home extends Component {
-    render() {
-        return (
-            <section  >
+const Home = () => {
+    return (
+        <Box
+            component="section"
+            id="home"
+            sx={{
+                position: "relative",
+                mt: "80px",
+                minHeight: "calc(100vh - 80px)",
+                display: "flex",
+                alignItems: "center", // Centra verticalmente
+                justifyContent: { xs: "center", md: "flex-start" }, // Centro en móvil, izquierda en desktop
+                px: { xs: 2, sm: 6, md: 12 },
+                overflow: "hidden",
+                scrollMarginTop: "100px",
+            }}
+        >
+            {/* Imagen de Fondo con Overlay */}
+            <Box
+                sx={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    zIndex: 1,
+                    "&::after": { // Capa oscura para legibilidad
+                        content: '""',
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        backgroundColor: "rgba(0, 0, 0, 0.4)", 
+                    }
+                }}
+            >
                 <Box
-                    id="home"
+                    component="img"
+                    src={Fondo}
+                    alt="Fondo"
                     sx={{
-                        scrollMarginTop: "100px",
-                        mt: "80px",
-                        minHeight: "calc(100vh - 80px)",
-                        px: { xs: 2, sm: 4, md: 8 },
-                        py: { xs: 4, sm: 6 },
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        backgroundColor: "#000",
-                        color: "white",
-                        position: "relative",
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
                     }}
-                >
-                    {/* Fondo con imagen */}
-                    <Box
-                        component="img"
-                        src={Fondo}
-                        alt="Fondo"
-                        sx={{
-                            position: "absolute",
-                            top: 0,
-                            left: 0,
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                            zIndex: 1,
-                            minHeight: "calc(100vh - 108px)",
-                        }}
-                    />
+                />
+            </Box>
 
-                    <Grid
-                        container
-                        direction="column"
-                        alignItems="center"
-                        justifyContent="center"
-                        spacing={2}
+            {/* Contenido Principal */}
+            <Grid
+                container
+                direction="column"
+                sx={{
+                    zIndex: 3,
+                    position: "relative",
+                    maxWidth: "800px",
+                    textAlign: { xs: "center", md: "left" }, // Alineación de texto responsiva
+                }}
+            >
+                <Grid item>
+                    <Typography
+                        variant="h1"
                         sx={{
-                            zIndex: 3,
-                            position: "relative",
-                            mb: 4,
-                            left: { xs: -70, sm: -120, md: -350 },
-                            top: { xs: -20, sm: -100, md: -50 },
+                            fontWeight: "bold",
+                            fontSize: { xs: "3rem", sm: "5rem", md: "7rem" },
+                            lineHeight: 1,
+                            letterSpacing: "0.05em",
+                            textShadow: "3px 3px 10px rgba(0,0,0,0.8)",
+                            fontFamily: "Poppins, sans-serif",
+                            color: '#fcbe05'
                         }}
                     >
-                        <Grid item>
-                            <Typography
-                                variant="h2"
-                                align="center"
-                                sx={{
-                                    fontWeight: "bold",
-                                    fontSize: { xs: "2rem", sm: "4rem", md: "5rem" },
-                                    letterSpacing: "0.1em",
-                                    textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
-                                    fontFamily: "Poppins",
-                                }}
-                            >
-                                ARTURO
-                            </Typography>
-                        </Grid>
+                        ARTURO
+                    </Typography>
+                    <Typography
+                        variant="h2"
+                        sx={{
+                            fontWeight: "bold",
+                            fontSize: { xs: "2rem", sm: "4rem", md: "5rem" },
+                            lineHeight: 1,
+                            letterSpacing: "0.05em",
+                            textShadow: "3px 3px 10px rgba(0,0,0,0.8)",
+                            fontFamily: "Poppins, sans-serif",
+                            color: '#fcbe05',
+                            mb: 4
+                        }}
+                    >
+                        GABRIEL
+                    </Typography>
+                </Grid>
 
-                        <Grid item>
-                            <Typography
-                                variant="h2"
-                                align="center"
-                                sx={{
-                                    fontSize: { xs: "2rem", sm: "4rem", md: "3rem" },
-                                    letterSpacing: "0.1em",
-                                    textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
-                                    fontFamily: "Poppins",
-                                    mt: -3
-                                }}
-                            >
-                                GABRIEL
-                            </Typography>
-                        </Grid>
-                        <Grid item>
-                            <Grid container spacing={2} justifyContent="center">
-                                <Grid item>
-                                    <Button 
-                                    className="btn-1"
-                                    href="#acerca"
-                                    >ABOUT ME</Button>
-                                </Grid>
-                                <Grid item>
-                                    <Button 
-                                    className="btn-1"
-                                    href='#skills'
-                                    >SKILLS</Button>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                    </Grid>
+                <Grid item>
+                    <Box 
+                        sx={{ 
+                            display: "flex", 
+                            gap: 2, 
+                            justifyContent: { xs: "center", md: "flex-start" } 
+                        }}
+                    >
+                        <Button 
+                            variant="contained"
+                            size="large"
+                            href="#acerca"
+                            sx={{ 
+                                bgcolor: '#fcbe05', 
+                                color: '#000',
+                                '&:hover': { bgcolor: '#e6ac00' }
+                            }}
+                        >
+                            ABOUT ME
+                        </Button>
+                        <Button 
+                            variant="outlined"
+                            size="large"
+                            href='#skills'
+                            sx={{ 
+                                color: '#fcbe05', 
+                                borderColor: '#fcbe05',
+                                '&:hover': { borderColor: '#fff', color: '#fff' }
+                            }}
+                        >
+                            SKILLS
+                        </Button>
+                    </Box>
+                </Grid>
+            </Grid>
+        </Box>
+    );
+};
 
-
-                </Box>
-
-
-            </section>
-
-        )
-    }
-}
-
-export default Home
+export default Home;

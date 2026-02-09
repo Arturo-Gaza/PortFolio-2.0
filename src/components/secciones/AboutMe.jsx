@@ -1,129 +1,122 @@
-import React, { Component } from 'react'
+import React from 'react';
 import {
-    Container,
     Grid,
-    Card,
-    CardMedia,
-    CardContent,
     Typography,
     Box,
+    Container
 } from "@mui/material";
-import Perfil from '../../assets/perfil.webp'
+import Perfil from '../../assets/perfil.webp';
 
-
-export class AboutMe extends Component {
-    render() {
-        return (
-            <section  >
-                <Box
-                    id="acerca"
-                    sx={{
-                        scrollMarginTop: "100px",
-                        mt: "80px",
-                        minHeight: "calc(120vh - 80px)",
-                        px: { xs: 2, sm: 4, md: 8 },
-                        py: { xs: 4, sm: 6 },
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        backgroundColor: "#000",
-                        color: "white",
-                        overflow: "hidden",
-                    }}
-                >
-                    <Typography
-                        variant="h2"
-                        align="left"
-                        sx={{
-                            fontWeight: "bold",
-                            fontSize: { xs: "2rem", sm: "3rem", md: "4rem" },
-                            letterSpacing: "0.1em",
-                            textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
-                            mb: { xs: 3, sm: 4 },
-                            fontFamily: "Poppins",
-                            ml: { xs: 1, sm: 0, md: -100 },
-                            mt: { xs: 7, sm: -10, md: 5 }
-                        }}
-                    >
-                        ABOUT ME
-                    </Typography>
-                    <Typography
-                        variant="h6"
-                        align="left"
-                        sx={{
-                            fontWeight: "bold",
-                            fontSize: { xs: "0.5rem", sm: "1rem", md: "1rem" },
-                            letterSpacing: "0.1em",
-                            textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
-                            mb: { xs: 3, sm: 4 },
-                            fontFamily: "Poppins",
-                            ml: { xs: 1, sm: 0, md: -106 },
-                            mt: { xs: -4, sm: -5, md: -4}
-                        }}
-                    >
-                    arturogabriel560@gmail.com
-                    </Typography>
-
-                    <Grid
-                        container
-                        spacing={10}
-                        justifyContent="center"
-                        alignItems="center"
-                        sx={{ mt: { xs: 10, sm: 10, md: 1 }, p: 1 }}
-                    >
-                        <Grid item xs={12} sm={6} md={5}>
+const AboutMe = () => {
+    return (
+        <Box
+            component="section"
+            id="acerca"
+            sx={{
+                scrollMarginTop: "80px",
+                minHeight: "100vh",
+                backgroundColor: "#000",
+                color: "white",
+                display: "flex",
+                alignItems: "center",
+                py: { xs: 8, md: 12 },
+            }}
+        >
+            <Container maxWidth="lg">
+                <Grid container spacing={{ xs: 4, md: 8 }} alignItems="center">
+                    
+                    {/* Columna de Texto */}
+                    <Grid item xs={12} md={7} order={{ xs: 2, md: 1 }}>
+                        <Box sx={{ textAlign: { xs: 'center', md: 'left' } }}>
                             <Typography
-                            variant="h3"
-                            sx={{
-                                mt:-10,
-                                fontSize: { xs: "2rem", sm: "3rem", md: "3rem" },
-                                fontFamily: 'Montserrat',
-                            }}
-                            >
-                                Hello!<br/>
-                                I´m <br/>
-                                Arturo Gabriel Zamora
-                            </Typography>
-                            <Typography variant="body1" sx={{ textAlign: 'justify' }}>
-                                Desarrollador web junior apasionado por la creación de aplicaciones.<br />
-                                Desde 2023 he participado en diversos proyectos del sector tecnológico,<br />
-                                desempeñándome tanto en el desarrollo back-end como en el front-end.<br />
-                                Con conocimientos en el framework Laravel en lado del back-end y React<br />
-                                en el lado del front-end.
-                            </Typography>
-                        </Grid>
-
-                        <Grid item
-                            xs={12} sm={6} md={5}
-                            sx={{
-                                width: "350px",
-                                height: "350px"
-                            }}
-
-                        >
-                            <Grid
-                                component="img"
-                                src={Perfil}
-                                alt="Perfil"
+                                variant="overline"
                                 sx={{
-                                    background: "white",
-                                    borderRadius: "50%",
-                                    width: "100%",
-                                    height: "100%",
+                                    color: '#fcbe05',
+                                    letterSpacing: "0.2em",
+                                    fontWeight: 'bold',
+                                    fontSize: "1rem"
                                 }}
                             >
+                                arturogabriel560@gmail.com
+                            </Typography>
+                            
+                            <Typography
+                                variant="h2"
+                                sx={{
+                                    fontWeight: "bold",
+                                    fontSize: { xs: "2.5rem", sm: "3.5rem", md: "4.5rem" },
+                                    fontFamily: "Poppins",
+                                    mb: 2,
+                                    lineHeight: 1.1
+                                }}
+                            >
+                                ABOUT ME
+                            </Typography>
 
-                            </Grid>
+                            <Typography
+                                variant="h4"
+                                sx={{
+                                    fontSize: { xs: "1.5rem", md: "2rem" },
+                                    fontFamily: 'Montserrat',
+                                    mb: 3,
+                                    color: '#eee'
+                                }}
+                            >
+                                Hello! I'm <br />
+                                <span style={{ color: '#fcbe05' }}>Arturo Gabriel Zamora</span>
+                            </Typography>
 
-                        </Grid>
+                            <Typography 
+                                variant="body1" 
+                                sx={{ 
+                                    textAlign: 'justify',
+                                    fontSize: "1.1rem",
+                                    lineHeight: 1.8,
+                                    maxWidth: "600px",
+                                    mx: { xs: 'auto', md: 0 },
+                                    color: "#ccc"
+                                }}
+                            >
+                                Desarrollador web junior apasionado por la creación de aplicaciones.
+                                Desde 2023 he participado en diversos proyectos del sector tecnológico,
+                                desempeñándome tanto en el desarrollo back-end como en el front-end.
+                                Con conocimientos en el framework Laravel en el lado del back-end y React
+                                en el lado del front-end.
+                            </Typography>
+                        </Box>
                     </Grid>
-                </Box>
 
+                    {/* Columna de Imagen */}
+                    <Grid item xs={12} md={5} order={{ xs: 1, md: 2 }}>
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                            }}
+                        >
+                            <Box
+                                component="img"
+                                src={Perfil}
+                                alt="Arturo Gabriel"
+                                sx={{
+                                    width: { xs: "250px", sm: "300px", md: "100%" },
+                                    maxWidth: "400px",
+                                    aspectRatio: "1/1",
+                                    borderRadius: "50%",
+                                    objectFit: "cover",
+                                    border: "4px solid #fcbe05",
+                                    boxShadow: "0px 0px 30px rgba(252, 190, 5, 0.2)",
+                                    backgroundColor: "white"
+                                }}
+                            />
+                        </Box>
+                    </Grid>
 
-            </section>
-        )
-    }
-}
+                </Grid>
+            </Container>
+        </Box>
+    );
+};
 
-export default AboutMe
+export default AboutMe;

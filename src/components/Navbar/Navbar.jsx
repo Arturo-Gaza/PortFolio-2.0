@@ -36,7 +36,7 @@ export const Navbar = () => {
             sx={{
                 backgroundColor: "rgba(128, 128, 128, 0.4)",
                 color: 'white',
-                height: '80px',
+                height: '60px',
                 zIndex: 1300,
             }}
         >

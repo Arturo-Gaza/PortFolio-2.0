@@ -15,39 +15,18 @@ import PostmanLogo from '../../assets/postman.png'
 import GitHubLogo from '../../assets/github-mark-white.png'
 import JavaLogo from '../../assets/java.png'
 import DjangoLogo from '../../assets/django.png'
+import ReactNativeLogo from '../../assets/react-native-1.svg'
+
 
 const herramientas = [
-    {
-        name: "Laravel",
-        image: LaravelLogo,
-    },
-    {
-        name: "React",
-        image: ReactLogo,
-    },
-    {
-        name: "PostgreSQL",
-        image: PostLogo,
-    },
-    {
-        name: "Postman",
-        image: PostmanLogo,
-
-    },
-    {
-        name: "GitHub",
-        image: GitHubLogo,
-
-    },
-    {
-        name: "Java",
-        image: JavaLogo
-
-    },
-    {
-        name: "Django",
-        image: DjangoLogo
-    }
+    { name: "Laravel", image: LaravelLogo },
+    { name: "React", image: ReactLogo },
+    { name: "PostgreSQL", image: PostLogo },
+    { name: "Postman", image: PostmanLogo },
+    { name: "GitHub", image: GitHubLogo },
+    { name: "Java", image: JavaLogo },
+    { name: "Django", image: DjangoLogo },
+    { name: "React Native", image: ReactNativeLogo }
 ];
 
 export class Skills extends Component {
@@ -83,12 +62,12 @@ export class Skills extends Component {
                                 textShadow: "2px 2px 4px rgba(0,0,0,0.5)",
                                 mb: 4,
                                 position: "relative",
-                                left: { xs: 10, sm: -10, md: -400 },
-                                top: { xs: -50, sm: -20, md: 0 },
-                                fontFamily: "Poppins"
+                                fontFamily: "Poppins",
+                                color: '#fcbe05 !important',
+                                textAlign: { xs: "center", md: "left" },
                             }}
                         >
-                            MY SKILLS
+                            Tecnologías y Frameworks
                         </Typography> 
 
                         <Grid container spacing={4} justifyContent="center" 
