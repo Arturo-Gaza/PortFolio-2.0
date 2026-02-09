@@ -4,6 +4,7 @@ import Navbar from './Navbar/Navbar';
 import AboutMe from './components/secciones/AboutMe'
 import Home from './components/secciones/Home'
 import Skills from './components/secciones/Skills'
+import Proyectos from './secciones/Proyectos';
 
 const Layout = () => {
 
@@ -15,6 +16,7 @@ const Layout = () => {
                 <Home />
                 <AboutMe />
                 <Skills />
+                <Proyectos />
             </main>
         </>
     );
