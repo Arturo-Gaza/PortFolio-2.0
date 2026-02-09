@@ -1,19 +1,20 @@
-import React from 'react';
-import { Box, Typography, Container, Card, CardContent, CardMedia, Button } from '@mui/material';
+import { Box, Button, Card, CardContent, CardMedia, Container, Typography } from '@mui/material';
 // Importamos Swiper y sus estilos
+import { EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import ReactLogo from '../../assets/React.png';
 
 const misProyectos = [
     { title: "Proyecto 1", desc: "Descripción breve", img: "url_imagen" },
     { title: "Proyecto 2", desc: "Descripción breve", img: "url_imagen" },
-    { title: "Proyecto 3", desc: "Descripción breve", img: "url_imagen" },
-    // Añade más proyectos...
+    { title: "Proyecto 3", desc: "Descripción breve", img: ReactLogo },
+
 ];
 
 const Proyectos = () => {
