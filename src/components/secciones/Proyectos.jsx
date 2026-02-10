@@ -15,21 +15,25 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import ReactLogo from '../../assets/React.png';
+import Inventario1 from '../../assets/Proyectos/inventario_1.png';
+import Inventario2 from '../../assets/Proyectos/inventario_2.png';
+import Inventario3 from '../../assets/Proyectos/inventario_3.png';
+
 
 const fallbackImg = ReactLogo;
 
 const misProyectos = [
+  
   {
-    title: "Proyecto 1",
-    desc: "Descripción del proyecto 1",
-    img: ReactLogo,
-    galeria: [ReactLogo, ReactLogo]
-  },
-  {
-    title: "Proyecto 2",
-    desc: "Descripción del proyecto 2",
-    img: ReactLogo,
-    galeria: []
+    title: "Inventario",
+    desc: "Sistema para cargar inventario desde CSV y registrar conteos por usuario.",
+    stack: {
+      frontend: "React",
+      backend: "Laravel",
+      db: "PostgreSQL"
+    },
+    img: Inventario1,
+    galeria: [Inventario1, Inventario2, Inventario3]
   },
   {
     title: "Proyecto 3",
@@ -128,7 +132,7 @@ const Proyectos = () => {
         {proyectoSeleccionado && (
           <>
             <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span style={{ fontWeight: 'bold', color: '#fcbe05' }}>
+              <span style={{ fontWeight: 'bold', color: '#283076' }}>
                 {proyectoSeleccionado.title}
               </span>
 
@@ -141,6 +145,24 @@ const Proyectos = () => {
               <Typography sx={{ mb: 3 }}>
                 {proyectoSeleccionado.desc}
               </Typography>
+
+                          <Box sx={{ mb: 3 }}>
+                              <Typography variant="subtitle1" sx={{ color: '#ff0101', fontWeight: 'bold' }}>
+                                  Stack tecnológico utilizado
+                              </Typography>
+
+                              <Typography variant="body2" sx={{ color: '#000000', fontWeight: 'bold' }}>
+                                  Frontend: {proyectoSeleccionado.stack.frontend}
+                              </Typography>
+
+                              <Typography variant="body2"sx={{ color: '#000000', fontWeight: 'bold' }}>
+                                  Backend: {proyectoSeleccionado.stack.backend}
+                              </Typography>
+
+                              <Typography variant="body2" sx={{ color: '#000000', fontWeight: 'bold' }}>
+                                  Base de datos: {proyectoSeleccionado.stack.db}
+                              </Typography>
+                          </Box>
 
               <Grid container spacing={2}>
                 {proyectoSeleccionado.galeria.map((foto, i) => (
