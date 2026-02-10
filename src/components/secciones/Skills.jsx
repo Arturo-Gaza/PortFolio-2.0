@@ -15,7 +15,7 @@ import GitHubLogo from '../../assets/github-mark-white.png';
 import JavaLogo from '../../assets/java.png';
 import LaravelLogo from '../../assets/Laravel.png';
 import PostLogo from '../../assets/Post.png';
-import PostmanLogo from '../../assets/postman.png';
+import PostmanLogo from '../../assets/Postman.png';
 import ReactNativeLogo from '../../assets/react-native-1.svg';
 import ReactLogo from '../../assets/React.png';
 
@@ -75,6 +75,7 @@ export class Skills extends Component {
                                 fontFamily: "Poppins",
                                 color: '#fcbe05 !important', // Color amarillo/dorado forzado
                                 textAlign: { xs: "center", md: "left" }, // Centrado en móvil, izquierda en PC
+                                
                             }}
                         >
                             Tecnologías y Frameworks
@@ -84,7 +85,7 @@ export class Skills extends Component {
                         spacing={4} crea separación entre los elementos.
                         */}
                         <Grid container spacing={4} justifyContent="center"
-                            sx={{ mt: { xs: -5, sm: 2, md: 0 } }}>
+                            sx={{ mt: { xs: 2, sm: 2, md: 0 } }}>
 
                             {/* .map() recorre el arreglo de herramientas y genera una
                             tarjeta por cada una.

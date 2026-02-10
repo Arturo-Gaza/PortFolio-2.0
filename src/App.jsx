@@ -1,4 +1,3 @@
-
 import './App.css'
 import { Navbar } from './components/Navbar/Navbar'
 import AboutMe from './components/secciones/AboutMe'
@@ -8,15 +7,14 @@ import Skills from './components/secciones/Skills'
 
 function App() {
   return (
-    <body class="pt-20">
+    <div className="pt-20">
       <Navbar />
       <Home />
       <AboutMe />
-      <Skills/>
+      <Skills />
       <Proyectos />
-    </body>
+    </div>
   )
-
 }
 
 export default App
