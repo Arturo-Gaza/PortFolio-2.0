@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import {
-  Box, Button, Card, CardContent, CardMedia, Container,
-  Typography, Dialog, DialogTitle, DialogContent,
-  IconButton, Grid
+    Box, Button, Card, CardContent, CardMedia, Container,
+    Typography, Dialog, DialogTitle, DialogContent,
+    IconButton, Grid
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -18,169 +18,177 @@ import ReactLogo from '../../assets/React.png';
 import Inventario1 from '../../assets/Proyectos/inventario_1.png';
 import Inventario2 from '../../assets/Proyectos/inventario_2.png';
 import Inventario3 from '../../assets/Proyectos/inventario_3.png';
+import Inventario4 from '../../assets/Proyectos/inventario_4.png';
+import Inventario5 from '../../assets/Proyectos/inventario_5.png';
 
 
 const fallbackImg = ReactLogo;
 
 const misProyectos = [
-  
-  {
-    title: "Inventario",
-    desc: "Sistema para cargar inventario desde CSV y registrar conteos por usuario.",
-    stack: {
-      frontend: "React",
-      backend: "Laravel",
-      db: "PostgreSQL"
+
+    {
+        title: "Sistema conteo de Inventario",
+        desc: "Sistema de gestión de inventarios que permite cargar archivos CSV para registrar productos de forma masiva. Al importar el archivo, el sistema actualiza automáticamente los catálogos y genera un conteo de inventario, el cual puede ser asignado a un usuario responsable para su captura y validación.",
+        stack: {
+            frontend: "React",
+            backend: "Laravel",
+            db: "PostgreSQL"
+        },
+        img: Inventario1,
+        galeria: [Inventario1, Inventario2, Inventario3, Inventario4, Inventario5]
     },
-    img: Inventario1,
-    galeria: [Inventario1, Inventario2, Inventario3]
-  },
-  {
-    title: "Proyecto 3",
-    desc: "Descripción del proyecto 3",
-    img: ReactLogo,
-    galeria: [ReactLogo, ReactLogo]
-  },
+    {
+        title: "Proyecto 3",
+        desc: "Descripción del proyecto 3",
+        img: ReactLogo,
+        galeria: [ReactLogo, ReactLogo]
+    },
 ];
 
 const Proyectos = () => {
-  const [open, setOpen] = useState(false);
-  const [proyectoSeleccionado, setProyectoSeleccionado] = useState(null);
+    const [open, setOpen] = useState(false);
+    const [proyectoSeleccionado, setProyectoSeleccionado] = useState(null);
 
-  const handleOpen = (proyecto) => {
-    setProyectoSeleccionado(proyecto);
-    setOpen(true);
-  };
+    const handleOpen = (proyecto) => {
+        setProyectoSeleccionado(proyecto);
+        setOpen(true);
+    };
 
-  const handleClose = () => {
-    setOpen(false);
-    setProyectoSeleccionado(null);
-  };
+    const handleClose = () => {
+        setOpen(false);
+        setProyectoSeleccionado(null);
+    };
 
-  return (
-    <Box id="proyectos" sx={{ py: 10, backgroundColor: '#000', color: 'white' }}>
-      <Container maxWidth="lg">
-        <Typography
-          variant="h2"
-          component="div"
-          sx={{
-            fontWeight: 'bold',
-            mb: 8,
-            textAlign: 'center',
-            color: '#fcbe05',
-            fontFamily: 'Poppins'
-          }}
-        >
-          MIS PROYECTOS
-        </Typography>
+    return (
+        <Box id="proyectos" sx={{ py: 10, backgroundColor: '#000', color: 'white' }}>
+            <Container maxWidth="lg">
+                <Typography
+                    variant="h2"
+                    component="div"
+                    sx={{
+                        fontWeight: 'bold',
+                        mb: 8,
+                        textAlign: 'center',
+                        color: '#fcbe05',
+                        fontFamily: 'Poppins'
+                    }}
+                >
+                    MIS PROYECTOS
+                </Typography>
 
-        <Swiper
-          effect="coverflow"
-          grabCursor
-          centeredSlides
-          slidesPerView="auto"
-          pagination={{ clickable: true }}
-          navigation
-          modules={[EffectCoverflow, Pagination, Navigation]}
-          style={{ padding: '50px 0' }}
-        >
-          {misProyectos.map((proy, index) => (
-            <SwiperSlide key={index} style={{ width: '300px' }}>
-              <Card
-                sx={{
-                  backgroundColor: '#1a1a1a',
-                  color: 'white',
-                  borderRadius: 4,
-                  border: '1px solid rgba(252, 190, 5, 0.3)'
-                }}
-              >
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image={proy.img || fallbackImg}
-                  alt={proy.title}
-                />
+                <Swiper
+                    effect="coverflow"
+                    grabCursor
+                    centeredSlides
+                    slidesPerView="auto"
+                    pagination={{ clickable: true }}
+                    navigation
+                    modules={[EffectCoverflow, Pagination, Navigation]}
+                    style={{ padding: '50px 0' }}
+                >
+                    {misProyectos.map((proy, index) => (
+                        <SwiperSlide key={index} style={{ width: '300px' }}>
+                            <Card
+                                sx={{
+                                    backgroundColor: '#1a1a1a',
+                                    color: 'white',
+                                    borderRadius: 4,
+                                    border: '1px solid rgba(252, 190, 5, 0.3)'
+                                }}
+                            >
+                                <CardMedia
+                                    component="img"
+                                    height="200"
+                                    image={proy.img || fallbackImg}
+                                    alt={proy.title}
+                                />
 
-                <CardContent sx={{ textAlign: 'center' }}>
-                  <Typography variant="h5" component="div" sx={{ fontWeight: 'bold' }}>
-                    {proy.title}
-                  </Typography>
+                                <CardContent sx={{ textAlign: 'center' }}>
+                                    <Typography variant="h5" component="div" sx={{ fontWeight: 'bold' }}>
+                                        {proy.title}
+                                    </Typography>
 
-                  <Typography
-                    variant="body2"
-                    sx={{ my: 2, color: 'rgba(255,255,255,0.7)' }}
-                  >
-                    {proy.desc}
-                  </Typography>
+                                    <Typography
+                                        variant="body2"
+                                        sx={{ my: 2, color: 'rgba(255,255,255,0.7)' }}
+                                    >
+                                        {proy.desc}
+                                    </Typography>
 
-                  <Button
-                    variant="outlined"
-                    onClick={() => handleOpen(proy)}
-                    sx={{ color: '#fcbe05', borderColor: '#fcbe05' }}
-                  >
-                    Ver Detalles
-                  </Button>
-                </CardContent>
-              </Card>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </Container>
+                                    <Button
+                                        variant="outlined"
+                                        onClick={() => handleOpen(proy)}
+                                        sx={{ color: '#fcbe05', borderColor: '#fcbe05' }}
+                                    >
+                                        Ver Detalles
+                                    </Button>
+                                </CardContent>
+                            </Card>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </Container>
 
-      {/* DIALOG */}
-      <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
-        {proyectoSeleccionado && (
-          <>
-            <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span style={{ fontWeight: 'bold', color: '#283076' }}>
-                {proyectoSeleccionado.title}
-              </span>
+            {/* DIALOG */}
+            <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth >
+                {proyectoSeleccionado && (
+                    <>
+                        <DialogTitle sx={{ textAlign: 'center', position: 'relative', background: '#29292a' }}>
+                            <Typography sx={{ fontWeight: 'bold', color: '#ffffff', fontSize: '24px' }}>
+                                {proyectoSeleccionado.title}
+                            </Typography>
 
-              <IconButton onClick={handleClose}>
-                <CloseIcon />
-              </IconButton>
-            </DialogTitle>
+                            <IconButton
+                                onClick={handleClose}
+                                sx={{ position: 'absolute', right: 8, top: 8, color: 'white' }}
+                            >
+                                <CloseIcon />
+                            </IconButton>
+                        </DialogTitle>
 
-            <DialogContent>
-              <Typography sx={{ mb: 3 }}>
-                {proyectoSeleccionado.desc}
-              </Typography>
+                        <DialogContent sx={{ background: '#000000', border: '1px solid rgba(252, 190, 5, 0.3)' }}>
+                            <Typography variant="subtitle1" sx={{ color: '#fcbe05', fontWeight: 'bold' }}>
+                                Descripcion del proyecto:
+                            </Typography>
+                            <Typography sx={{ mb: 3, color: 'white' }}>
+                                {proyectoSeleccionado.desc}
+                            </Typography>
 
-                          <Box sx={{ mb: 3 }}>
-                              <Typography variant="subtitle1" sx={{ color: '#ff0101', fontWeight: 'bold' }}>
-                                  Stack tecnológico utilizado
-                              </Typography>
+                            <Box sx={{ mb: 3 }}>
+                                <Typography variant="subtitle1" sx={{ color: '#fcbe05', fontWeight: 'bold' }}>
+                                    Stack tecnológico utilizado
+                                </Typography>
 
-                              <Typography variant="body2" sx={{ color: '#000000', fontWeight: 'bold' }}>
-                                  Frontend: {proyectoSeleccionado.stack.frontend}
-                              </Typography>
+                                <Typography variant="body2" sx={{ color: '#ffffff', fontWeight: 'bold' }}>
+                                    Frontend: {proyectoSeleccionado.stack.frontend}
+                                </Typography>
 
-                              <Typography variant="body2"sx={{ color: '#000000', fontWeight: 'bold' }}>
-                                  Backend: {proyectoSeleccionado.stack.backend}
-                              </Typography>
+                                <Typography variant="body2" sx={{ color: '#ffffff', fontWeight: 'bold' }}>
+                                    Backend: {proyectoSeleccionado.stack.backend}
+                                </Typography>
 
-                              <Typography variant="body2" sx={{ color: '#000000', fontWeight: 'bold' }}>
-                                  Base de datos: {proyectoSeleccionado.stack.db}
-                              </Typography>
-                          </Box>
+                                <Typography variant="body2" sx={{ color: '#ffffff', fontWeight: 'bold' }}>
+                                    Base de datos: {proyectoSeleccionado.stack.db}
+                                </Typography>
+                            </Box>
 
-              <Grid container spacing={2}>
-                {proyectoSeleccionado.galeria.map((foto, i) => (
-                  <Grid item xs={12} sm={6} key={i}>
-                    <Box
-                      component="img"
-                      src={foto || fallbackImg}
-                      sx={{ width: '100%', borderRadius: 2 }}
-                    />
-                  </Grid>
-                ))}
-              </Grid>
-            </DialogContent>
-          </>
-        )}
-      </Dialog>
-    </Box>
-  );
+                            <Grid container spacing={2}>
+                                {proyectoSeleccionado.galeria.map((foto, i) => (
+                                    <Grid item xs={12} sm={6} key={i}>
+                                        <Box
+                                            component="img"
+                                            src={foto || fallbackImg}
+                                            sx={{ width: '100%', borderRadius: 2, border: '1px solid rgba(252, 190, 5, 0.3)' }}
+                                        />
+                                    </Grid>
+                                ))}
+                            </Grid>
+                        </DialogContent>
+                    </>
+                )}
+            </Dialog>
+        </Box>
+    );
 };
 
 export default Proyectos;
