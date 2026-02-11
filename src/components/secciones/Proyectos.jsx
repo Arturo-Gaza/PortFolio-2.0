@@ -20,6 +20,8 @@ import Inventario2 from '../../assets/Proyectos/inventario_2.png';
 import Inventario3 from '../../assets/Proyectos/inventario_3.png';
 import Inventario4 from '../../assets/Proyectos/inventario_4.png';
 import Inventario5 from '../../assets/Proyectos/inventario_5.png';
+import RG_1 from '../../assets/Proyectos/PantallasRG/Login.jpg';
+import RG_2 from '../../assets/Proyectos/PantallasRG/Registrarse.jpg';
 
 
 const fallbackImg = ReactLogo;
@@ -34,14 +36,21 @@ const misProyectos = [
             backend: "Laravel",
             db: "PostgreSQL"
         },
+        year: "2024",
         img: Inventario1,
         galeria: [Inventario1, Inventario2, Inventario3, Inventario4, Inventario5]
     },
     {
-        title: "Proyecto 3",
-        desc: "Descripción del proyecto 3",
-        img: ReactLogo,
-        galeria: [ReactLogo, ReactLogo]
+        title: "Sistema Recupera Gastos",
+        desc: "Sistema de facturación de tickets donde el usuario carga una imagen del comprobante de compra. La imagen es procesada mediante un servicio de OCR para extraer automáticamente los datos fiscales, los cuales se validan y se utilizan para generar la factura correspondiente al usuario.",
+        stack: {
+            frontend: "React",
+            backend: "Laravel",
+            db: "PostgreSQL"
+        },
+        year: "2025",
+        img: RG_1,
+        galeria: [RG_1, RG_2]
     },
 ];
 
@@ -169,6 +178,10 @@ const Proyectos = () => {
 
                                 <Typography variant="body2" sx={{ color: '#ffffff', fontWeight: 'bold' }}>
                                     Base de datos: {proyectoSeleccionado.stack.db}
+                                </Typography>
+
+                                <Typography variant="body2" sx={{ color: '#ffffff', fontWeight: 'bold' }}>
+                                    Fecha de creacion: {proyectoSeleccionado.year}
                                 </Typography>
                             </Box>
 
