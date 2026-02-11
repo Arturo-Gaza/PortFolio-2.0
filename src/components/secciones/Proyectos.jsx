@@ -22,6 +22,13 @@ import Inventario4 from '../../assets/Proyectos/inventario_4.png';
 import Inventario5 from '../../assets/Proyectos/inventario_5.png';
 import RG_1 from '../../assets/Proyectos/PantallasRG/Login.jpg';
 import RG_2 from '../../assets/Proyectos/PantallasRG/Registrarse.jpg';
+import RG_3 from '../../assets/Proyectos/PantallasRG/Codigo de verificacion.jpg'
+import RG_4 from '../../assets/Proyectos/PantallasRG/Datos Personales.jpg'
+import RG_5 from '../../assets/Proyectos/PantallasRG/Registro completado.jpg'
+import RG_6 from '../../assets/Proyectos/PantallasRG/Dashboard.jpg'
+import RG_7 from '../../assets/Proyectos/PantallasRG/Recargar saldo.jpg'
+import RG_8 from '../../assets/Proyectos/PantallasRG/Registro Fiscal.jpg'
+import RG_9 from '../../assets/Proyectos/PantallasRG/Administrar Usuarios.jpg'
 
 
 const fallbackImg = ReactLogo;
@@ -50,7 +57,7 @@ const misProyectos = [
         },
         year: "2025",
         img: RG_1,
-        galeria: [RG_1, RG_2]
+        galeria: [RG_1, RG_2, RG_3, RG_4, RG_5, RG_6, RG_7, RG_8, RG_9]
     },
 ];
 
